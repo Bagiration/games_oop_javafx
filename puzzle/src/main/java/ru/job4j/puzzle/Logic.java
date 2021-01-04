@@ -2,6 +2,7 @@ package ru.job4j.puzzle;
 
 import ru.job4j.puzzle.firuges.Cell;
 import ru.job4j.puzzle.firuges.Figure;
+import ru.job4j.puzzle.firuges.Win;
 
 import java.util.Arrays;
 
@@ -68,11 +69,17 @@ public class Logic {
         return rst;
     }
 
-    public boolean isWin() {
+   /* public boolean isWin() {
         int[][] table = this.convert();
         boolean result = false;
         return result;
+    }*/
+
+    public boolean isWin() {
+        return Win.check(convert());
+
     }
+
 
     public int[][] convert() {
         int[][] table = new int[this.size][this.size];
